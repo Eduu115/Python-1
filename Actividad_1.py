@@ -26,7 +26,7 @@ def ejercicio1():
 
 
 def ejercicio2():
-    while (True):
+    while True:
         n1 = int(input("Introduce un numero \n"))
         n2 = int(input("Introduce otro numero \n"))
         contador_iguales = 0
@@ -35,10 +35,10 @@ def ejercicio2():
         # logica
         if n1 == -1 and n2 == -1:
             break
-        elif (n1 > n2):
+        elif n1 > n2:
             numeros = 1
             contador_n1_mas_que_n2 += 1
-        elif (n2 > n1):
+        elif n2 > n1:
             numeros = 2
             contador_n2_mas_que_n1 += 1
         else:
@@ -46,7 +46,7 @@ def ejercicio2():
             contador_iguales += 1
 
         # resultados
-        match (numeros):
+        match numeros:
             case 1:
                 print("El numero 1 es mayor a el numero 2")
             case 2:
@@ -70,9 +70,9 @@ def ejercicio2():
 
 def ejercicio3():
 
-    # Multiplos de 3 recorremos los 250 numeros para compararlos con el 3
+    # Múltiplos de 3 recorremos los 250 números para compararlos con el 3
     def comporbar_multiplos(numero):
-        print(f"Vamos a comprobar los multiplos de {numero}")
+        print(f"Vamos a comprobar los múltiplos de {numero}")
         contador_multiplos = 0
         for i in range(1,250):
             if i % numero == 0:
@@ -123,7 +123,7 @@ def ejercicio4():
 # persona
 # a. Escribir toda la información de lo tecleado de la siguiente forma:
 # b. Nombre completo en mayúsculas + el literal de sexo: Hombre para H, Mujer
-# para M + el literal del salario : Bajo si el salario es menor de 30.000; Medio
+# para M + el literal del salario: Bajo si el salario es menor de 30.000; Medio
 # entre 30.000 y 50.000; Alto si es mayor de 50.000.
 # c. El nombre completo, el literal del sexo y el salario hacerlo en sendas
 # funciones previas al algoritmo.
