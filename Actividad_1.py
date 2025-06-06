@@ -84,16 +84,88 @@ def ejercicio3():
           f" en los primeros 250 numeros ")
     print(f"{250 - (comporbar_multiplos(7) + comporbar_multiplos(3))} numeros del 1 al 250 no son muliplos de niunguno")
 
-#
+# 4. Para que un triángulo sea válido se tiene que cumplir que la suma de dos cualquiera
+# de sus lados siempre tiene que ser mayor que el tercero(en todas sus
+# combinaciones).
+# a. Crear una función que reciba los tres lados y devuelva True si el triángulo es
+# válido, y False si el triángulo no es válido
+# b. Tras llamar a esta función si no es válido informar y si es válido, determinar si
+# es equilatero(los tres lados iguales, isósceles(2 lados iguales y uno desigual, o
+# escaleno, los tres lados distintos.
 
+def ejercicio4():
+    triangulo = [
+        int(input("Introduce el primer lado \n")),
+        int(input("Introduce el segundo lado \n")),
+        int(input("Introduce el tercer lado \n")),
+    ]
+
+    def triangulo_valido(lados):
+        a, b, c = lados
+        if (a + b > c) and (a + c > b) and (b + c > a):
+            return True
+        else: return False
+
+    if not triangulo_valido(triangulo):
+        print("El triángulo NO es válido.")
+    else:
+        a, b, c = triangulo
+        if a == b == c:
+            tipo = "equilátero"
+        elif a == b or a == c or b == c:
+            tipo = "isósceles"
+        else:
+            tipo = "escaleno"
+        print("El triángulo ES VALIDO. \n")
+        print(f"El triangulo es de tipo {tipo}")
+
+# 5. Pedir por consola el nombre, el apellido y el salario y el sexo(“H” o “M”) de una
+# persona
+# a. Escribir toda la información de lo tecleado de la siguiente forma:
+# b. Nombre completo en mayúsculas + el literal de sexo: Hombre para H, Mujer
+# para M + el literal del salario : Bajo si el salario es menor de 30.000; Medio
+# entre 30.000 y 50.000; Alto si es mayor de 50.000.
+# c. El nombre completo, el literal del sexo y el salario hacerlo en sendas
+# funciones previas al algoritmo.
+
+def ejercicio5():
+
+    nombreInp = input("Introduce el nombre de la persona \n")
+    apellidoInp = input("Introduce el apellido de la persona \n")
+    salarioInp = int(input("Introduce el salario de la persona \n"))
+    sexoInp = input("Introduce el sexo de la persona (h/m) \n")
+
+    def literal_nombre(nombre, apellido):
+        return str(nombre).upper() + " " + str(apellido).upper()
+
+    def literal_sexo(sexo):
+
+        match str(sexo).upper():
+            case "H":
+                sexo = "MASCULINO"
+            case "M":
+                sexo = "FEMENINO"
+        return sexo
+
+    def literal_salario(salario):
+        if salario < 30000: salario = "Bajo"
+        elif salario < 50000: salario = "Medio"
+        else: salario = "Alto"
+        return salario
+
+    print(f" Su nombre es: {literal_nombre(nombreInp, apellidoInp)}, sexo: {str(literal_sexo(sexoInp))}, "
+          f"salario: {str(literal_salario(salarioInp))}")
 
 def flujo():
     print("Ejercicio 1 \n \n")
-    ejercicio1()
+    #ejercicio1()
     print("Ejercicio 2 \n \n")
-    ejercicio2()
+    #ejercicio2()
     print("Ejercicio 3 \n \n")
-    ejercicio3()
-
+    #ejercicio3()
+    print("Ejercicio 4 \n \n")
+    #ejercicio4()
+    print("Ejercicio 5 \n \n")
+    ejercicio5()
 if __name__ == "__main__":
     flujo()
