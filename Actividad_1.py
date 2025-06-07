@@ -156,6 +156,37 @@ def ejercicio5():
     print(f" Su nombre es: {literal_nombre(nombreInp, apellidoInp)}, sexo: {str(literal_sexo(sexoInp))}, "
           f"salario: {str(literal_salario(salarioInp))}")
 
+# 6. Crear una lista de dict, con la información ; nombre, apellidos, sexo, salario. Recorrer
+# la lista e informar:
+# a. Cuantas personas hay en la lista.
+# b. Cuentas son Hombre y cuantas mujeres.
+# c. Cuanto suman sus salarios.
+
+def ejercicio6():
+
+    persona1 = {"nombre":"Edu", "apellidos":"ap1 ap2", "sexo":"MASCULINO", "salario":12000}
+    persona2 = {"nombre":"AA", "apellidos":"ap1 ap2", "sexo":"MASCULINO", "salario":12000}
+    persona3 = {"nombre":"BB", "apellidos": "ap1 ap2", "sexo": "FEMENINO", "salario": 12000}
+
+    personas = [persona1, persona2, persona3]
+
+    contadorSalario = 0
+    contadorHombres = 0
+
+
+    print(f"Hay {len(personas)} personas")
+
+    for persona in personas:
+        # salario
+        contadorSalario += persona["salario"]
+        # sexo
+        if persona["sexo"] == "MASCULINO":
+            contadorHombres += 1
+
+    print(f"La suma de salarios es: {contadorSalario}")
+
+    print(f"La cantidad de hombres es: {contadorHombres}, y de mujeres: {len(personas)-contadorHombres}")
+
 def flujo():
     print("Ejercicio 1 \n \n")
     #ejercicio1()
@@ -166,6 +197,9 @@ def flujo():
     print("Ejercicio 4 \n \n")
     #ejercicio4()
     print("Ejercicio 5 \n \n")
-    ejercicio5()
+    #ejercicio5()
+    print("Ejercicio 6 \n \n")
+    ejercicio6()
+# ============================= MAIN ===========================
 if __name__ == "__main__":
     flujo()
